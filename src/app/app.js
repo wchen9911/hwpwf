@@ -1,4 +1,5 @@
 angular.module( 'ngBoilerplate', [
+  'ngMaterial',
   'templates-app',
   'templates-common',
   'ngBoilerplate.home',

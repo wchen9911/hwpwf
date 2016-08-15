@@ -69,9 +69,13 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/angular-i18n/angular-locale_zh-cn.js',
+      'vendor/angular-aria/angular-aria.js',
+      'vendor/angular-animate/angular-animate.js',
+      'vendor/angular-material/angular-material.js',
       'vendor/lodash/dist/lodash.js'
     ],
     css: [
+      'vendor/angular-material/angular-material.css'
     ],
     assets: [
     ],
