@@ -1,0 +1,34 @@
+<div class="jumbotron white">
+    <div class="row tickets">
+      <div class="col-sm-9 text-left map" id="mapcontainer">
+        <stadiummap 
+          metadata="http://127.0.0.1:9001/assets/map/lakers.json" 
+          image="http://127.0.0.1:9001/assets/map/lakers.jpg">
+        </stadiummap>
+      </div>
+      <div class="col-sm-3 container list">
+        <div class="row item">
+          <div class="col-sm-8 text-left">
+            <div>Section</div>
+            <div>Row and seats</div>
+            <div><select><option>1</option><option>2</option></select></div>
+          </div>
+          <div class="col-sm-4">
+            <div>1300</div>
+            <button type="button" class="btn btn-success buybtn" ng-click="buyTicket()">购买票</button>
+          </div>
+        </div>
+        <div class="row item">
+          <div class="col-sm-8 text-left">
+            <div>Section</div>
+            <div>Row and seats</div>
+            <div><select><option>1</option><option>2</option></select></div>
+          </div>
+          <div class="col-sm-4">
+            <div>1300</div>
+            <button type="button" class="btn btn-success buybtn">购买票</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

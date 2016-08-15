@@ -1,0 +1,92 @@
+
+<div class="alcatrazPanel">
+  <div class="calendar">
+    <div style="display:inline-block; min-height:290px;">
+      <uib-datepicker ng-model="dt" class="well well-sm" jm-dp-refresh-view="dateDisablePromise" datepicker-options="options"></uib-datepicker>
+    </div>
+  </div>
+  <div class="tickets">
+
+    
+    <div>恶魔岛与天使岛套票</div>
+
+    <div class="timeTableContainer">
+      <button ng-click="onClickTime(value.ticket)" ng-repeat="value in showTickets.package"  ng-disabled="{{value.disabled}}" type="button" class="btn btn-primary">{{value.time}}</button>
+    </div>
+    <div>恶魔岛票(白天)</div>
+    <div class="timeTableContainer">
+      <button ng-click="onClickTime(value.ticket)" ng-repeat="value in showTickets.alcatraz" ng-disabled="{{value.disabled}}" type="button" class="btn btn-primary">{{value.time}}</button>
+    </div>
+    <div>恶魔岛票(晚间)</div>
+    <div class="timeTableContainer">
+      <button ng-click="onClickTime(value.ticket)" ng-repeat="value in showTickets.night" ng-disabled="{{value.disabled}}" type="button" class="btn btn-primary">{{value.time}}</button>
+    </div>
+  </div>
+  
+</div>
+<div ng-if="time" class="alcatrazQuantityContainer">
+  <div class="date">日期： {{ dt | date:'yyyy-MM-dd' }} {{time}}</div>
+  <div class="input-group" ng-repeat="item in promotions">
+    <span class="input-group-addon" id="basic-addon1">{{item.promotion.name}} 数量 ：</span>
+    <select ng-model="item.quantity" class="form-control" ng-options="option for option in selectOptions">
+    </select>
+  </div>
+  <button class="btn btn-primary" ng-click="onBuyBtn()">购买</button>
+  </form>
+</div>
+
+<div>
+  
+<!--
+  <div>*注意事项</div>
+-->
+  <p>
+    恶魔岛是一座方圆22英亩、岩石丛生的小岛，这是以前是美国联邦政府囚禁恶行重大的囚犯的地方。在这里关过的恶徒包括芝加哥“教父”卡邦、杀人如麻却又天赋异禀的“鸟人”史特劳德和冷血的“机关枪”杀手凯利等。囚犯们只能透过监狱的铁窗望着生机无限的旧金山，接受另一种残酷的精神刑罚。如今整个岛尽可能保留了原来的监狱风貌，岛上还有鸟园、博物馆、书店等设施。在岛上的商店里，售有那些刑期已满的囚犯回忆录，他们都宣称那是种“永生难忘的痛苦经历”。这个岛虽然有阴森的历史，但是它也是一个野生动物的庇护所，许多种类的鸟在此栖息，对于游人来说，也不失为散心沉思的好去处。
+  </p>
+  <p>
+    在旧金山33号码头搭渡船前往，33号码头每天白班船8:45-15:20之间大约每30分钟1班开往恶魔岛，恶魔岛9:55-18:30之间大约每30分钟一班开回33号码头。夜班船共2班，从33号码头出发时间分别为17:55和18:30，从恶魔岛出发时间分别为20:40和21:25。
+  </p>
+  <p>只可以购买3个月以内的参观票</p>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th><th>恶魔岛与天使岛套票</th><th>恶魔岛票(白天)</th> <th>恶魔岛票(晚间)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">成人(18-61岁)</th>
+        <td>522(已含税)</td>
+        <td>258(已含税)</td>
+        <td>312(已含税)</td>
+      </tr>
+      <tr>
+        <th scope="row">青年(18-61岁)</th>
+        <td>522(已含税)</td>
+        <td>258(已含税)</td>
+        <td>312(已含税)</td>
+      </tr>
+      <tr>
+        <th scope="row">儿童(5-11岁)</th>
+        <td>353(已含税)</td>
+        <td>160(已含税)</td>
+        <td>188(已含税)</td>
+      </tr>
+      <tr>
+        <th scope="row">老年(62岁及以上)</th>
+        <td>510(已含税)</td>
+        <td>246(已含税)</td>
+        <td>290(已含税)</td>
+      </tr>
+      <tr>
+        <th scope="row">幼儿(0-4岁)</th>
+        <td>免费</td>
+        <td>免费</td>
+        <td>免费</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
