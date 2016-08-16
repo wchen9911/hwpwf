@@ -3,10 +3,11 @@ angular.module( 'ngBoilerplate', [
   'templates-app',
   'templates-common',
   'ngBoilerplate.home',
-  //'ngBoilerplate.about',
-  'haiwaipiaowu.nba',
-  'haiwaipiaowu.checkout',
   'haiwaipiaowu.alcatraz',
+  'haiwaipiaowu.checkout',
+  'haiwaipiaowu.nba',
+  'haiwaipiaowu.performer',
+  'haiwaipiaowu.service',
   'ui.router'
 ])
 
