@@ -5,9 +5,14 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.home',
   'haiwaipiaowu.alcatraz',
   'haiwaipiaowu.checkout',
+  'haiwaipiaowu.foot',
+  'haiwaipiaowu.map',
   'haiwaipiaowu.nba',
   'haiwaipiaowu.performer',
+  'haiwaipiaowu.rightad',
   'haiwaipiaowu.service',
+  'haiwaipiaowu.ticket',
+  'haiwaipiaowu.ticketlist',
   'ui.router'
 ])
 

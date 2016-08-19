@@ -9,15 +9,19 @@ service('restfulService', function($resource) {
     return "HOHO~~~";
   };
 
-  var Performance = $resource(APIURL+'/performances/', {}, {
+  var Performance = $resource(APIURL+'/performances/:subpath/:performerId', {}, {
     getPerformerPerformances: {
       method: 'GET',
-      isArray: true
+      isArray: true,
+      params: {subpath: 'performer'}
+    },
+    test: {
+      method: 'GET'
     }
   });
 
   this.getPerformerPerformances = function() {
-    return Performance.getPerformerPerformances({"dd":1}).$promise;
+    return Performance.getPerformerPerformances({"performerId":1}).$promise;
   };
 
 
