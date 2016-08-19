@@ -31,5 +31,6 @@ angular.module( 'ngBoilerplate', [
   });
 })
 
+
 ;
 
