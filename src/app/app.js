@@ -8,6 +8,7 @@ angular.module( 'ngBoilerplate', [
   'haiwaipiaowu.foot',
   'haiwaipiaowu.map',
   'haiwaipiaowu.nba',
+  'haiwaipiaowu.performance',
   'haiwaipiaowu.performer',
   'haiwaipiaowu.rightad',
   'haiwaipiaowu.service',

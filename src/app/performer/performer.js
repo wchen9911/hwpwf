@@ -1,3 +1,5 @@
+
+
 angular.module('haiwaipiaowu.performer', [
     'ui.router',
     'configFactory',
@@ -11,6 +13,7 @@ config(function( $stateProvider ) {
     views : {
       "main":{
         controller : 'performerCtrl',
+        controllerAs : 'perfCtr',
         templateUrl: 'performer/performer.tpl.html'
       }
     },
@@ -19,17 +22,17 @@ config(function( $stateProvider ) {
 
 })
 
-.controller('performerCtrl', function($scope, $stateParams, $restURL, restfulService){
-
-  console.log($stateParams);
-
-  restfulService.getPerformerPerformances().then(function(value) {
-    console.log("Promise work");
-    console.log(value);
-    value.forEach(function(v) {
-      console.log(v);
-    });
-  });
-
+.controller('performerCtrl', function($scope, $state, $stateParams, restfulService){
+  this.performanceList = [];
   
+  restfulService.getPerformerPerformances($stateParams.performerId).then(function(value) {
+    this.performanceList = value;
+    console.log(value);
+  }.bind(this));
+
+  this.gotoTicket = function (performance) {
+    console.log(performance);
+    $state.go('performance', {performanceId: performance._id});
+  };
+
 });
