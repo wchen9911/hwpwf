@@ -19,7 +19,9 @@ config(function( $stateProvider ) {
 })
 
 .controller('performanceCtrl', function($scope, $stateParams, restfulService){
+  this.performanceId = $stateParams.performanceId;
   var performanceId  = $stateParams.performanceId;
+  $scope.performanceId = $stateParams.performanceId;
 
   restfulService.getPerformanceDetail(performanceId).then(function(data) {
     console.log(data);

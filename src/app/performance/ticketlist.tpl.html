@@ -1,54 +1,20 @@
 <div>
-<md-content>
-	<md-list flex>
-		<md-list-item class="md-3-line">
-			<div class="md-list-item-text" layout="column">
-				<p>Upper Level</p>
-	            <p>Corner 221</p>
-	            <p>1-3 tickets</p>
-	         </div>
-	         <div class="md-list-item-text" layout="column">
-				<p>12</p>
-	            <p></p>
-	            <p></p>
-	         </div>
-	         <div class="md-list-item-text" layout="column">
-				<h3>72.95</h3>
-	            <p>/ea</p>
-	         </div>
-	    </md-list-item>
-	    <md-list-item class="md-3-line">
-			<div class="md-list-item-text" layout="column">
-				<p>Upper Level</p>
-	            <p>Corner 221</p>
-	            <p>1-3 tickets</p>
-	         </div>
-	         <div class="md-list-item-text" layout="column">
-				<p>12</p>
-	            <p></p>
-	            <p></p>
-	         </div>
-	         <div class="md-list-item-text" layout="column">
-				<h3>72.95</h3>
-	            <p>/ea</p>
-	         </div>
-	    </md-list-item>
-	    <md-list-item class="md-3-line">
-			<div class="md-list-item-text" layout="column">
-				<p>Upper Level</p>
-	            <p>Corner 221</p>
-	            <p>1-3 tickets</p>
-	         </div>
-	         <div class="md-list-item-text" layout="column">
-				<p>12</p>
-	            <p></p>
-	            <p></p>
-	         </div>
-	         <div class="md-list-item-text" layout="column">
-				<h3>72.95</h3>
-	            <p>/ea</p>
-	         </div>
-	    </md-list-item>
-	</md-list>
-</md-content>
+	<md-content>
+		<md-list flex>   
+			<md-list-item class="md-3-line" ng-repeat="ticket in tickets">
+				<div class="md-list-item-text" layout="column">
+					<p ng-if="ticket.level">{{ticket.level}}</p>
+					<p ng-if="ticket.section">{{ticket.section}}</p>
+		      <p> {{ticket.pack | json}}</p>
+		    </div>
+		         <div class="md-list-item-text" layout="column">
+					<p ng-if="ticket.row">{{ticket.row}}</p>
+		         </div>
+		         <div class="md-list-item-text" layout="column">
+					<h3>{{ticket.price}}</h3>
+		            <p>/ea</p>
+		         </div>
+		    </md-list-item>
+		</md-list>
+	</md-content>
 </div>

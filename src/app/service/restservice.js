@@ -27,6 +27,14 @@ service('restfulService', function($resource) {
     }
   });
 
+  var Ticket = $resource(APIURL+'/tickets/', {}, {
+    getPerformanceTickets: {
+      method: 'GET',
+      url: APIURL+'/tickets/performance/:performanceId',
+      isArray: true
+    }
+  });
+
   this.getPerformerPerformances = function(performerId) {
     return Performance.getPerformerPerformances({"performerId":performerId}).$promise;
   };
@@ -37,6 +45,10 @@ service('restfulService', function($resource) {
 
   this.getLocationDetail = function(locationId) {
     return Location.getLocationDetail({locationId: locationId}).$promise;
+  };
+
+  this.getPerformanceTickets = function(performanceId) {
+    return Ticket.getPerformanceTickets({"performanceId":performanceId}).$promise;
   };
 
 });
