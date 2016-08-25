@@ -4,6 +4,7 @@ angular.module( 'ngBoilerplate', [
   'templates-common',
   'ngBoilerplate.home',
   'haiwaipiaowu.alcatraz',
+  'haiwaipiaowu.cart',
   'haiwaipiaowu.checkout',
   'haiwaipiaowu.foot',
   'haiwaipiaowu.map',

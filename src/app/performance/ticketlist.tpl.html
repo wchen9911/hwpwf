@@ -1,20 +1,25 @@
 <div>
-	<md-content>
-		<md-list flex>   
-			<md-list-item class="md-3-line" ng-repeat="ticket in tickets">
-				<div class="md-list-item-text" layout="column">
-					<p ng-if="ticket.level">{{ticket.level}}</p>
-					<p ng-if="ticket.section">{{ticket.section}}</p>
-		      <p> {{ticket.pack | json}}</p>
+	<div class="ticketContainer">
+	  <div layout="row" class="header">
+	    <div flex="33">Section</div>
+	    <div flex="33">Row</div>
+	    <div flex="33">Price</div>
+	  </div>
+	  <div class="ticketListContainer">
+		  <div layout="row" ng-repeat="ticket in tickets" class="ticket">
+		    <div flex="33">
+		      <span ng-if="ticket.level">{{ticket.level}}</span>
+		      <span ng-if="ticket.section">{{ticket.section}}</span>
+		      <span> {{ticket.pack | json}}</span>
 		    </div>
-		         <div class="md-list-item-text" layout="column">
-					<p ng-if="ticket.row">{{ticket.row}}</p>
-		         </div>
-		         <div class="md-list-item-text" layout="column">
-					<h3>{{ticket.price}}</h3>
-		            <p>/ea</p>
-		         </div>
-		    </md-list-item>
-		</md-list>
-	</md-content>
+		    <div flex="33" layout-align="center center">
+		      <span ng-if="ticket.row">{{ticket.row}}</span>
+		    </div>
+		    <div flex="33" layout-align="center center">
+		      <span>{{ticket.price}}</span>
+		      <span>/ea</span>
+		    </div>
+		  </div>
+	  </div>
+  </div>
 </div>
