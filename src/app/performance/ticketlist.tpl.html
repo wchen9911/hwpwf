@@ -6,7 +6,10 @@
 	    <div flex="33">Price</div>
 	  </div>
 	  <div class="ticketListContainer">
-		  <div layout="row" ng-repeat="ticket in tickets" class="ticket">
+		  <div ng-click="gotoTicket(ticket._id);" 
+		  			layout="row"
+		  			ng-repeat="ticket in tickets"
+		  			class="ticket">
 		    <div flex="33">
 		      <span ng-if="ticket.level">{{ticket.level}}</span>
 		      <span ng-if="ticket.section">{{ticket.section}}</span>

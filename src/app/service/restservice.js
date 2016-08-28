@@ -32,23 +32,31 @@ service('restfulService', function($resource) {
       method: 'GET',
       url: APIURL+'/tickets/performance/:performanceId',
       isArray: true
+    },
+    getTicket: {
+      method: 'GET',
+      url: APIURL+'/tickets/:ticketId'
     }
   });
 
   this.getPerformerPerformances = function(performerId) {
-    return Performance.getPerformerPerformances({"performerId":performerId}).$promise;
+    return Performance.getPerformerPerformances({'performerId': performerId}).$promise;
   };
 
   this.getPerformanceDetail = function(performanceId) {
-    return Performance.getPerformanceDetail({"performanceId":performanceId}).$promise;
+    return Performance.getPerformanceDetail({'performanceId': performanceId}).$promise;
   };
 
   this.getLocationDetail = function(locationId) {
-    return Location.getLocationDetail({locationId: locationId}).$promise;
+    return Location.getLocationDetail({'locationId': locationId}).$promise;
   };
 
   this.getPerformanceTickets = function(performanceId) {
-    return Ticket.getPerformanceTickets({"performanceId":performanceId}).$promise;
+    return Ticket.getPerformanceTickets({'performanceId': performanceId}).$promise;
+  };
+
+  this.getTicket = function(ticketId) {
+    return Ticket.getTicket({'ticketId': ticketId}).$promise;
   };
 
 });

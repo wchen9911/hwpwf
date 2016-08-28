@@ -5,6 +5,7 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.home',
   'haiwaipiaowu.alcatraz',
   'haiwaipiaowu.cart',
+  'haiwaipiaowu.cartlist',
   'haiwaipiaowu.checkout',
   'haiwaipiaowu.foot',
   'haiwaipiaowu.map',

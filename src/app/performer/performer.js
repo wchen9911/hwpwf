@@ -30,7 +30,7 @@ config(function( $stateProvider ) {
     console.log(value);
   }.bind(this));
 
-  this.gotoTicket = function (performance) {
+  this.gotoPerformance = function (performance) {
     console.log(performance);
     $state.go('performance', {performanceId: performance._id});
   };

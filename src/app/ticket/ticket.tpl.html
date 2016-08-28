@@ -1,10 +1,28 @@
 <div>
-	<div layout="row">
-		<div flex="70">
-			<map></map>
-		</div>
-		<div flex="30">
-			<ticketlist></ticketlist>
-		</div>
-	</div>
+  <div layout="row">
+    <div flex="33">区</div>
+    <div flex="33">排</div>
+    <div flex="33">座位</div>
+  </div>
+  <div layout="row">
+    <div flex="33">{{ticketCtrl.ticket.level}} {{ticketCtrl.ticket.section}}</div>
+    <div flex="33">{{ticketCtrl.ticket.row}}排</div>
+    <div flex="33">1，2，3，4</div>
+  </div>
+  <div layout="row">
+    系统会自动在座位[1,2,4]中选择cart2张连票。
+  </div>
+  <div layout="row">
+    电子票
+  </div>
+  <div layout="row">
+    <div>$69.99/张 x 2张 = $140</div>
+  </div>
+  <div layout="row" layout-align="space-between center">
+    <button flex="48">加到购物车</button>
+    <button flex="48">加到购物车去结算</button>
+  </div>
+  <div>当前购物车</div>
+  <cartlist></cartlist>
+  {{ticketCtrl | json}}
 </div>

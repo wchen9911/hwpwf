@@ -2,7 +2,7 @@ angular.module('haiwaipiaowu.ticketlist', [
 
 ])
 
-.controller('ticketlistController', function($scope, restfulService){
+.controller('ticketlistController', function($scope, restfulService, $state){
 
   console.log(this.performanceId);
 
@@ -14,6 +14,15 @@ angular.module('haiwaipiaowu.ticketlist', [
     console.log(data);
   });
 
+  this.gotoTicket = function (ticketId) {
+    $state.go('ticket', {ticketId: ticketId});
+  };
+
+  $scope.gotoTicket = function (ticketId) {
+    $state.go('ticket', {ticketId: ticketId});
+  };
+
+
 })
 
 .directive('ticketlist', function(){
@@ -21,7 +30,7 @@ angular.module('haiwaipiaowu.ticketlist', [
     restrict: 'E',
     templateUrl: 'performance/ticketlist.tpl.html',
     controller: 'ticketlistController',
-    controllerAs: 'tktCtrl',
+    controllerAs: 'tktlsCtrl',
     bindToController: {
       performanceId: '='
     }
