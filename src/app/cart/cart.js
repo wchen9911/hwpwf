@@ -2,7 +2,12 @@ angular.module('haiwaipiaowu.cartlist', [
 
 ])
 
-.controller('cartlistController', function($scope, restfulService, $state){
+.controller('cartlistController', function($scope, restfulService, $state, cart){
+
+  this.itemList = cart.getCart();
+
+  console.log(this.itemList);
+
 
 })
 

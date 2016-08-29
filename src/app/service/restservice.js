@@ -39,6 +39,13 @@ service('restfulService', function($resource) {
     }
   });
 
+  var Feedback = $resource(APIURL+'/feedbacks/', {}, {
+    addFeedback: {
+      method: 'POST',
+      url: APIURL+'/feedbacks/'
+    }
+  });
+
   this.getPerformerPerformances = function(performerId) {
     return Performance.getPerformerPerformances({'performerId': performerId}).$promise;
   };
@@ -57,6 +64,10 @@ service('restfulService', function($resource) {
 
   this.getTicket = function(ticketId) {
     return Ticket.getTicket({'ticketId': ticketId}).$promise;
+  };
+
+  this.addFeedback = function(feedback) {
+    return Feedback.addFeedback(feedback).$promise;
   };
 
 });

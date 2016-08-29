@@ -7,12 +7,12 @@ service('cart', function(){
 
   this.getCart = function() {
     var cart = localStorage.getItem(CART);
-    return cart ? {} : JSON.parse(cart);
+    return !cart ? {} : JSON.parse(cart);
   };
 
-  this.addToCart = function(ticketId, quantity) {
+  this.addToCart = function(ticketId, quantity, ticket) {
     var cart = this.getCart();
-    cart[ticketId] = {quantity: quantity};
+    cart[ticketId] = {quantity: quantity, ticket: ticket};
     this.saveCart(cart);
   };
 

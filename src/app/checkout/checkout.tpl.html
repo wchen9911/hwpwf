@@ -1,29 +1,12 @@
-<div>您的订单包含以下产品：</div>
 <div>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th></th><th>门票</th><th ng-if="hasPromotion">折扣</th><th>日期和时间</th><th>数量</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in cart">
-        <th scope="row"></th>
-        <td>{{item.ticket.title}}</td>
-        <td ng-if="hasPromotion">{{item.promotion.name}}</td>
-        <td>{{item.ticket.date | date:'yyyy-MM-dd HH:mm' : 'UTC'}}</td>
-        <td>{{item.quantity}} 张</td>
-      </tr>
-    </tbody>
-  </table>
+  <cartlist></cartlist>
+
   <div>
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">联系电话：</span>
         <input ng-model="telephone" placeholder="方便与您联系" class="form-control" />
     </div>
   </div>
-  <div>共计：{{totalCost}}元</div>
 
   <button class="btn btn-primary" ng-click="onTaobaoBtn()">转到淘宝购买</button>
-  
 </div>

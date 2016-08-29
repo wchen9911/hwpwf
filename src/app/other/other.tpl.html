@@ -1,0 +1,30 @@
+<div>
+  <h2>当前只接入NBA球票，如果您需要购买其他种类的门票。</h2>
+  <div layout="row">
+    <div>
+      <h3>扫码添加客服微信人工购买</h3>
+      <img src="assets/img/wechat.png">
+    </div>
+    <div style="margin-left:20px; min-width: 300px;">
+      <h3> 或 留下反馈</h3>
+      <form name="userForm">
+        <div layout="row">
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>您的联系方式(选填)</label>
+            <input ng-model="otherCtrl.feedback.contact">
+          </md-input-container>
+        </div>
+        <div layout="row">
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>您要购买的票类型</label>
+            <input ng-model="otherCtrl.feedback.content">
+          </md-input-container>
+        </div>
+        <div>
+          <div ng-if="otherCtrl.message">{{otherCtrl.message}}</div>
+          <md-button ng-click="otherCtrl.addFeedback();" class="md-raised md-primary" type="submit">提交</md-button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

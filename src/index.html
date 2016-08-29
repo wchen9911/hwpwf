@@ -24,42 +24,26 @@
     
   </head>
   <body>
-    <div class="container">
-      <div class="navbar navbar-default">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
-            ng-click="menuCollapsed = ! menuCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="navbar-brand">
-            海外票务
-          </div>
-        </div>
-        <div class="collapse navbar-collapse" collapse="menuCollapsed">
-          <ul class="nav navbar-nav">
-            <li ui-sref-active="active">
-              <a href ui-sref="alcatraz">
-                <i class="fa fa-home"></i>
-                恶魔岛
-              </a>
-            </li>
-            <!--
-            <li ui-sref-active="active">
-              <a href ui-sref="nba">
-                <i class="fa fa-home"></i>
-                NBA
-              </a>
-            </li>
-            -->
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="container" ui-view="main"></div>
+  <div layout="column" layout-fill>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <img src="assets/img/logo.png" class="nav_logo">
+      <span>海外票务</span>
+      <!-- fill up the space between left and right area -->
+      <ul>
+        <li><a ui-sref-active="active" ui-sref="alcatraz">NBA</a></li>
+        <li><a ui-sref="other">其他</a></li>
+      </ul>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-content>
+       <div class="container" ui-view="main"></div>
+  </md-content>
+</div>
+
+  
     <foot></foot>
   </body>
 </html>
