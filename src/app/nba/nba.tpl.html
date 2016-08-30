@@ -1,1 +1,15 @@
-I am NBA!!
+<div layout="row" layout-wrap>
+  <md-card class="nba_team_card"
+            ng-click="NBATeamCtrl.onclick(team);"
+            md-theme="default"
+            md-theme-watch
+            ng-repeat="team in NBATeamCtrl.teams">
+    <img src="assets/{{team.logo}}" alt="{{team.ename}}">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{team.name}}</span>
+        <span class="md-subhead">{{team.city}}</span>
+      </md-card-title-text>
+    </md-card-title>
+  <md-card>
+</div>

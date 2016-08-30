@@ -46,6 +46,14 @@ service('restfulService', function($resource) {
     }
   });
 
+  var Performer = $resource(APIURL+'/performers/', {}, {
+    getPerformersByGroup: {
+      method: 'GET',
+      url: APIURL+'/performers/group/:group',
+      isArray: true
+    }
+  });
+
   this.getPerformerPerformances = function(performerId) {
     return Performance.getPerformerPerformances({'performerId': performerId}).$promise;
   };
@@ -68,6 +76,10 @@ service('restfulService', function($resource) {
 
   this.addFeedback = function(feedback) {
     return Feedback.addFeedback(feedback).$promise;
+  };
+
+  this.getPerformersByGroup = function(group) {
+    return Performer.getPerformersByGroup({group: group}).$promise;
   };
 
 });
