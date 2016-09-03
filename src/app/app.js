@@ -35,11 +35,13 @@ angular.module( 'ngBoilerplate', [
   });
 })
 
-.filter('arrayToString', function(input){
-  if(Array.isArray(input)){
-    return input.join(",");
-  }else{
-    return input;
-  }
+.filter('arrayToString', function(){
+  return function(input) {
+    if(Array.isArray(input)){
+      return input.join(",");
+    }else{
+      return input;
+    }
+  };
 })
 ;

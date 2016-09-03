@@ -1,27 +1,33 @@
 <div>
 	<div class="ticketContainer">
 	  <div layout="row" class="header">
-	    <div flex="33">Section</div>
-	    <div flex="33">Row</div>
-	    <div flex="33">Price</div>
+	    <div flex="33">区域</div>
+	    <div flex="33">座位</div>
+	    <div flex="33">单价</div>
 	  </div>
 	  <div class="ticketListContainer">
-		  <div ng-click="gotoTicket(ticket._id);" 
-		  			layout="row"
-		  			ng-repeat="ticket in tickets"
+		  <div 	ng-repeat="ticket in tickets"
+		  		 	ng-click="gotoTicket(ticket._id);" 
 		  			class="ticket">
-		    <div flex="33">
-		      <span ng-if="ticket.level">{{ticket.level}}</span>
-		      <span ng-if="ticket.section">{{ticket.section}}</span>
-		      <span> {{ticket.pack | json}}</span>
-		    </div>
-		    <div flex="33" layout-align="center center">
-		      <span ng-if="ticket.row">{{ticket.row}}</span>
-		    </div>
-		    <div flex="33" layout-align="center center">
-		      <span>{{ticket.price}}</span>
-		      <span>/ea</span>
-		    </div>
+		  	<div 
+			  			layout="row">
+			    <div flex="33">
+			      <span ng-if="ticket.level">{{ticket.level}}层</span>
+			      <span ng-if="ticket.section">{{ticket.section}}区</span>
+			    </div>
+			    <div flex="33" layout-align="center center">
+			      <span ng-if="ticket.row">{{ticket.row}}排</span>
+			      <span ng-if="ticket.seat">
+			      	{{ticket.seat | arrayToString}}座
+			      </span>
+			    </div>
+			    <div flex="33" layout-align="center center">
+			      <span>{{ticket.price}}</span>
+			      <span>/张</span>
+			    </div>
+			  </div>
+			  <div class="pack-container" ng-if="ticket.pack">*可购买张数组合:{{ticket.pack | arrayToString}}
+			  </div>
 		  </div>
 	  </div>
   </div>

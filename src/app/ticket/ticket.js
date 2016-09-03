@@ -8,7 +8,7 @@ var ticketCtrl = function($scope, $stateParams, restfulService, cart, $state) {
   // Loads ticket info
   restfulService.getTicket(ticketId).then(function(ticket) {
     this.ticket = ticket;
-    console.log(ticket);
+    this.quantity = this.ticket && this.ticket.pack && this.ticket.pack[0] && 1;
   }.bind(this));
 
 };

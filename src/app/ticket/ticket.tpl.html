@@ -1,27 +1,42 @@
-<div>
-  <div layout="row">
-    <div flex="33">区</div>
+<div class="checkout">
+  <div class="header" layout="row">
+    <div flex="33">区域</div>
     <div flex="33">排</div>
     <div flex="33">座位</div>
   </div>
-  <div layout="row">
-    <div flex="33">{{ticketCtrl.ticket.level}} {{ticketCtrl.ticket.section}}</div>
-    <div flex="33">{{ticketCtrl.ticket.row}}排</div>
-    <div flex="33">1，2，3，4</div>
+  <div class="info">
+    <div layout="row">
+      <span flex="33">{{ticketCtrl.ticket.level}}层 {{ticketCtrl.ticket.section}}区</span>
+      <span flex="33">{{ticketCtrl.ticket.row}}排</span>
+      <span flex="33">{{ticketCtrl.ticket.seat | arrayToString}}</span>
+    </div>
+    <div class="seat-hint" layout="row">
+      系统会自动在座位[{{ticketCtrl.ticket.seat | arrayToString}}]中选择{{ticketCtrl.quantity}}张连票。
+    </div>
+    <div layout="row">
+      <span class="quantity-hint">购买张数:</span>
+      <md-input-container class="quantity-select">
+          <md-select ng-model="ticketCtrl.quantity">
+            <md-option ng-repeat="number in ticketCtrl.ticket.pack" ng-value="number">
+              {{number}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+    </div>
+    <div layout="row">
+      电子票
+    </div>
+    <div layout="row">
+      <span>{{ticketCtrl.ticket.price}}元/张 x {{ticketCtrl.quantity}}张 = {{ticketCtrl.ticket.price * ticketCtrl.quantity}}元</span>
+    </div>
   </div>
   <div layout="row">
-    系统会自动在座位[1,2,4]中选择cart2张连票。
+    <md-button ng-click="ticketCtrl.addTicketToCart(ticketCtrl.ticket);" class="md-raised md-primary">加到购物车</md-button>
+    <md-button ng-click="ticketCtrl.addTicketToCardAndCheckout(ticketCtrl.ticket);" class="md-raised md-primary">加到购物车去结算</md-button>
+    <!--
+    <button flex="48" >加到购物车</button>
+    <button flex="48" >加到购物车去结算</button>
+    -->
   </div>
-  <div layout="row">
-    电子票
-  </div>
-  <div layout="row">
-    <div>$69.99/张 x 2张 = $140</div>
-  </div>
-  <div layout="row" layout-align="space-between center">
-    <button flex="48" ng-click="ticketCtrl.addTicketToCart(ticketCtrl.ticket);">加到购物车</button>
-    <button flex="48" ng-click="ticketCtrl.addTicketToCardAndCheckout(ticketCtrl.ticket);">加到购物车去结算</button>
-  </div>
-  <div>当前购物车</div>
   <cartlist></cartlist>
 </div>
