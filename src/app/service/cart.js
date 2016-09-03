@@ -22,8 +22,9 @@ service('cart', function(){
 
   this.deleteFromCart = function(ticketId) {
     var cart = this.getCart();
-    if (cart.ticketId) {
-      delete cart.ticketId;
+    if (cart[ticketId]) {
+      delete cart[ticketId];
     }
+    this.saveCart(cart);
   };
 });

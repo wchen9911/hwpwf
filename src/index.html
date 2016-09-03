@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html ng-app="ngBoilerplate" ng-controller="AppCtrl">
-  <head>
-    <title ng-bind="pageTitle"></title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <title ng-bind="pageTitle"></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- font awesome from BootstrapCDN -->
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!-- compiled CSS -->
+  <% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" />
+    <% }); %>
+      <script type="text/javascript" src="/assets/raphael/raphael-min.js"></script>
+      <!-- compiled JavaScript -->
+      <% scripts.forEach( function ( file ) { %>
+        <script type="text/javascript" src="<%= file %>"></script>
+        <% }); %>
+          <!-- it's stupid to have to load it here, but this is for the +1 button -->
+          <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+          {
+            "parsetags": "explicit"
+          }
+          </script>
+</head>
 
-    <!-- font awesome from BootstrapCDN -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
-    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
-    
-    <script type="text/javascript" src="/assets/raphael/raphael-min.js"></script>
-
-    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
-    <script type="text/javascript" src="<%= file %>"></script><% }); %>
-
-    <!-- it's stupid to have to load it here, but this is for the +1 button -->
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-      { "parsetags": "explicit" }
-    </script>
-
-    
-  </head>
-  <body>
-
+<body>
   <div layout="column" layout-fill>
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <img src="assets/img/logo.png" class="nav_logo">
-      <span>海外票务</span>
-      <!-- fill up the space between left and right area -->
-      <ul>
-        <li><a ui-sref-active="active" ui-sref="nba">NBA</a></li>
-        <li><a ui-sref="other">其他</a></li>
-      </ul>
-      <span flex></span>
-    </div>
-  </md-toolbar>
-  <md-content>
-       <div class="container" ui-view="main"></div>
-  </md-content>
-</div>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <img src="assets/img/logo.png" class="nav_logo">
+        <span>海外票务</span>
+        <!-- fill up the space between left and right area -->
+        <ul class="header-nav-bar">
+          <li><a ui-sref-active="active" ui-sref="nba">NBA</a></li>
+          <li><a ui-sref-active="active" ui-sref="other">其他</a></li>
+          <li><a ui-sref-active="active" ui-sref="checkout">购物车</a></li>
+        </ul>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <div class="container" ui-view="main"></div>
+    </md-content>
+  </div>
+  <foot></foot>
+</body>
 
-  
-    <foot></foot>
-  </body>
 </html>

@@ -116,6 +116,29 @@ h2 {
   margin-right: 10px;
 }
 
+.header-nav-bar {
+  list-style: none;
+  margin-bottom: 0px;
+  li {
+    display: inline;
+    a:hover {
+      color: white;
+    }
+    a.active {
+      font-size: 30px;
+    }
+    a:visited {
+      color: white;
+    }
+    a:focus {
+      color: white;
+    }
+  }
+  li+li {
+    margin-left: 15px;
+  }
+}
+
 /**
  * Now that all app-wide styles have been applied, we can load the styles for
  * all the submodules and components we are using. 

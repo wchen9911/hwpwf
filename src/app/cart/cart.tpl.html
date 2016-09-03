@@ -1,8 +1,28 @@
 <div>
   <div class="cart-header">当前购物车</div>
   <div ng-repeat="(key, item) in clCtrl.itemList">
-    <div>{{item.ticket.performanceInfo.date}} {{item.ticket.performanceInfo.name}}</div>
-    <div>{{item.ticket.level}} {{item.ticket.section}}区{{item.ticket.row}}排</div>
-    <div>{{item.quantity}} 张</div>
+    <div class="cart-item">
+      <div layout="row">
+        <div>
+          <div class="cart-item-name">{{item.ticket.performanceInfo.date}} {{item.ticket.performanceInfo.name}}</div>
+          <div class="cart-item-position">{{item.ticket.level}} {{item.ticket.section}}区  {{item.ticket.row}}排  {{item.quantity}}张</div>
+        </div>
+        <div flex>
+        </div>
+        <div>
+          <div class="cart-price">{{item.quantity * item.ticket.price}}元</div>
+          <md-button ng-click="clCtrl.deleteItem(item.ticket._id);" class="md-raised md-warn">删除</md-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div layout="row">
+    <div class="cart-total">
+      合计: {{clCtrl.total}}元
+    </div>
+    <dir flex></dir>
+    <div>
+      <md-button class="md-raised md-primary">结账</md-button>
+    </div>
   </div>
 </div>
