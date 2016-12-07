@@ -75,7 +75,7 @@ module.exports = {
       'vendor/lodash/dist/lodash.js'
     ],
     css: [
-      'vendor/angular-material/angular-material.css'
+      'vendor/angular-material/angular-material.min.css'
     ],
     assets: [
     ],
