@@ -4,8 +4,6 @@ angular.module('haiwaipiaowu.service', [
 
 service('restfulService', function($resource) {
 
-  var APIURL = "http://localhost:3000";
-
   var Performance = $resource(APIURL+'/performances/:subpath/:performerId', {}, {
     getPerformerPerformances: {
       method: 'GET',
@@ -54,6 +52,13 @@ service('restfulService', function($resource) {
     }
   });
 
+  var City = $resource(APIURL+'/cities/', {}, {
+    getCitiesByProduction: {
+      method: 'GET',
+      isArray: true
+    }
+  });
+
   this.getPerformerPerformances = function(performerId) {
     return Performance.getPerformerPerformances({'performerId': performerId}).$promise;
   };
@@ -80,6 +85,10 @@ service('restfulService', function($resource) {
 
   this.getPerformersByGroup = function(group) {
     return Performer.getPerformersByGroup({group: group}).$promise;
+  };
+
+  this.getCitiesByProduction = function(production) {
+    return City.getCitiesByProduction({production: production}).$promise;
   };
 
 });

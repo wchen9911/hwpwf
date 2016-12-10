@@ -17,6 +17,7 @@ angular.module( 'ngBoilerplate', [
   'haiwaipiaowu.service',
   'haiwaipiaowu.ticket',
   'haiwaipiaowu.ticketlist',
+  'haiwaipiaowu.gocard',
   'ui.router'
 ])
 

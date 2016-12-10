@@ -15,6 +15,12 @@
   <% scripts.forEach( function ( file ) { %>
     <script type="text/javascript" src="<%= file %>"></script>
   <% }); %>
+  <script type="text/javascript">
+    APIURL = '';
+    if (location.port == 9001) {
+      APIURL = 'http://localhost:3100';
+    }
+  </script>
 </head>
 
 <body>
@@ -26,8 +32,9 @@
         <!-- fill up the space between left and right area -->
         <ul class="header-nav-bar">
           <li><a ui-sref-active="active" ui-sref="nba">NBA</a></li>
-          <li><a ui-sref-active="active" ui-sref="other">其他</a></li>
-          <li><a ui-sref-active="active" ui-sref="checkout">购物车</a></li>
+          <li><a ui-sref="gocard">城市一卡通</a></li>
+          <li><a ui-sref="other">其他</a></li>
+          <li><a ui-sref="checkout">购物车</a></li>
         </ul>
         <span flex></span>
       </div>
