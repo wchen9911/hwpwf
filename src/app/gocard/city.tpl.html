@@ -1,3 +1,14 @@
 <div>
-  Hello city!!!
+  <div layout="row" layout-align="space-around center">
+    <md-card ng-repeat="gocard in GoCardCityController.gocards" 
+             ng-click="GoCardCityController.clickOnGoCard(gocard);">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{gocard.name}}</span>
+          <span class="md-subhead">{{gocard.intro}}</span>
+        </md-card-title-text>
+      </md-card-title>
+    </md-card>
+  </div>
+  <div ui-view="card"></div>
 </div>

@@ -34,7 +34,7 @@ service('restfulService', function($resource) {
     getTicket: {
       method: 'GET',
       url: APIURL+'/tickets/:ticketId'
-    }
+    } 
   });
 
   var Feedback = $resource(APIURL+'/feedbacks/', {}, {
@@ -56,6 +56,21 @@ service('restfulService', function($resource) {
     getCitiesByProduction: {
       method: 'GET',
       isArray: true
+    }
+  });
+
+  var GoCard = $resource(APIURL + '/gocards/', {}, {
+    getGoCardsByCity: {
+      method: 'GET',
+      isArray: true,
+      url: APIURL + '/gocards/city/:city'
+    }
+  });
+
+  var Attraction = $resource(APIURL + '/attractions/', {}, {
+    getAttractionsByCard: {
+      method: 'GET',
+      url: APIURL + '/attractions/gocard/:gocard' 
     }
   });
 
@@ -89,6 +104,14 @@ service('restfulService', function($resource) {
 
   this.getCitiesByProduction = function(production) {
     return City.getCitiesByProduction({production: production}).$promise;
+  };
+
+  this.getGoCardsByCity = function(city) {
+    return GoCard.getGoCardsByCity({city: city}).$promise;
+  };
+
+  this.getAttractionsByCard = function(gocard) {
+    return Attraction.getAttractionsByCard({gocard: gocard}).$promise;
   };
 
 });

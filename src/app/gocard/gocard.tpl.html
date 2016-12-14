@@ -1,6 +1,6 @@
 <div class="cities-container">
-  <md-card ng-repeat="city in GoCardController.cities">
-    <img ng-src="{{city.thumbnail}}" class="md-card-image" alt="Washed Out">
+  <md-card ng-repeat="city in GoCardController.cities" ng-click="GoCardController.clickOnCity(city);">
+    <img ng-src="{{city.thumbnail}}" class="md-card-image" alt="">
     <md-card-title>
       <md-card-title-text>
         <span class="md-headline">{{city.name}}</span>
