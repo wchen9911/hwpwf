@@ -1,8 +1,32 @@
 <div>
-
-<div>
-<div>1 天</div>
-<div></div>
-
-</div>  
+  <div class="gocard-tickets-container">
+    <div class="gocard-ticket" ng-repeat="ticket in CardController.tickets">
+      <div class="gocard-ticket-name">{{ticket.name}}</div>
+      <div class="gocard-ticket-price">
+        <span ng-repeat="promotion in ticket.promotions">
+          <span>{{promotion.name}}</span>
+          <span ng-if="!$last">/</span>
+        </span>
+      </div>
+      <div class="gocard-ticket-price">
+        <span ng-repeat="promotion in ticket.promotions">
+          <span>{{promotion.price}}</span>
+          <span ng-if="!$last">/</span>
+        </span>
+      </div>
+      <md-button class="md-raised md-primary" ng-click="CardController.buyTicekt(ticket)">购买</md-button>
+    </div>
+  </div>
+  <div class="gocard-attractions-container">
+    <div class="gocard-attraction" ng-repeat="attraction in CardController.attractions"
+         ng-click="CardController.clickOnAttraction(attraction)">
+      <div class="gocard-attraction-thumbnail">
+        <img src="{{attraction.pictures[0]}}" alt="{{attraction.name}}">
+      </div>
+      <div class="gocard-attraction-info">
+        <div class="gocard-attraction-name">{{attraction.name}}</div>
+        <div class="gocard-attraction-intro">{{attraction.intro}}</div>
+      </div>
+    </div>
+  </div>
 </div>

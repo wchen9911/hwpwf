@@ -4,6 +4,7 @@
 <head>
   <title ng-bind="pageTitle"></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="http://oivgvnues.bkt.clouddn.com/hwpw-icon.png">
   <!-- font awesome from BootstrapCDN -->
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <!-- compiled CSS -->
@@ -24,25 +25,19 @@
 </head>
 
 <body>
-  <div layout="column" layout-fill>
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <img src="assets/img/logo.png" class="nav_logo">
-        <span>海外票务</span>
-        <!-- fill up the space between left and right area -->
-        <ul class="header-nav-bar">
-          <li><a ui-sref-active="active" ui-sref="nba">NBA</a></li>
-          <li><a ui-sref="gocard">城市一卡通</a></li>
-          <li><a ui-sref="other">其他</a></li>
-          <li><a ui-sref="checkout">购物车</a></li>
-        </ul>
-        <span flex></span>
-      </div>
-    </md-toolbar>
-    <md-content>
-      <div class="container" ui-view="main"></div>
-    </md-content>
-  </div>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <img src="http://oivgvnues.bkt.clouddn.com/hwpw-logo.png" class="nav_logo">
+      <ul class="header-nav-bar">
+        <li><a ui-sref-active="active" ui-sref="nba">NBA</a></li>
+        <li><a ui-sref="gocard">城市一卡通</a></li>
+        <li><a ui-sref="other">其他</a></li>
+        <!--li><a ui-sref="checkout">购物车</a></li-->
+      </ul>
+    <span flex></span>
+    </div>
+  </md-toolbar>
+  <div class="container" ui-view="main"></div>
   <foot></foot>
 </body>
 

@@ -69,7 +69,7 @@ h2 {
 
 .navbar {
   margin-top: 20px;
-  
+
   small {
     font-size: 60%;
   }
@@ -81,42 +81,20 @@ h2 {
  */
 
 .footer {
-  margin-top: 80px;
 
   .footer-inner {
-    padding: 40px 0;
+    padding: 10px 0;
     border-top: 1px solid #DDD;
   }
 
-  .social {
-    float: right;
-    margin: 0;
-    list-style: none;
-
-    li {
-      float: left;
-      margin-left: 20px;
-
-      a, a:visited {
-        color: @gray-light;
-        text-decoration: none;
-        font-size: 40px;
-        .transition( 250ms ease-in-out );
-
-        &:hover {
-          color: @gray;
-        }
-      }
-    }
-  }
 }
 
 .nav_logo {
   height: 40px;
-  margin-right: 10px;
 }
 
 .header-nav-bar {
+  padding-left: 20px;
   list-style: none;
   margin-bottom: 0px;
   li {
@@ -125,7 +103,6 @@ h2 {
       color: white;
     }
     a.active {
-      font-size: 30px;
     }
     a:visited {
       color: white;
@@ -141,7 +118,7 @@ h2 {
 
 /**
  * Now that all app-wide styles have been applied, we can load the styles for
- * all the submodules and components we are using. 
+ * all the submodules and components we are using.
  *
  * TODO: In a later version of this boilerplate, I'd like to automate this.
  */
@@ -153,4 +130,5 @@ h2 {
 @import '../app/ticket/ticket.less';
 @import '../app/cart/cart.less';
 @import '../app/gocard/gocard.less';
-
+@import '../app/attraction/attraction.less';
+@import '../app/other/other.less';

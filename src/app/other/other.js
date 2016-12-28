@@ -32,6 +32,6 @@ config(function( $stateProvider ) {
         templateUrl: 'other/other.tpl.html'
       }
     },
-    data:{ pageTitle: '' }
+    data:{ pageTitle: '其他-代买' }
   });
 });

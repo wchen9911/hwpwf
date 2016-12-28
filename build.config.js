@@ -22,7 +22,7 @@ module.exports = {
   app_files: {
     js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
     jsunit: [ 'src/**/*.spec.js' ],
-    
+
     coffee: [ 'src/**/*.coffee', '!src/**/*.spec.coffee' ],
     coffeeunit: [ 'src/**/*.spec.coffee' ],
 
@@ -75,7 +75,8 @@ module.exports = {
       'vendor/lodash/dist/lodash.js'
     ],
     css: [
-      'vendor/angular-material/angular-material.min.css'
+      'vendor/angular-material/angular-material.min.css',
+      'vendor/bootstrap/dist/css/bootstrap.min.css'
     ],
     assets: [
     ],

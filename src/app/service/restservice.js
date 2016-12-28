@@ -34,7 +34,7 @@ service('restfulService', function($resource) {
     getTicket: {
       method: 'GET',
       url: APIURL+'/tickets/:ticketId'
-    } 
+    }
   });
 
   var Feedback = $resource(APIURL+'/feedbacks/', {}, {
@@ -70,7 +70,11 @@ service('restfulService', function($resource) {
   var Attraction = $resource(APIURL + '/attractions/', {}, {
     getAttractionsByCard: {
       method: 'GET',
-      url: APIURL + '/attractions/gocard/:gocard' 
+      url: APIURL + '/attractions/gocard/:gocard'
+    },
+    getAttraction: {
+      method: 'GET',
+      url: APIURL + '/attractions/:attractionID'
     }
   });
 
@@ -112,6 +116,10 @@ service('restfulService', function($resource) {
 
   this.getAttractionsByCard = function(gocard) {
     return Attraction.getAttractionsByCard({gocard: gocard}).$promise;
+  };
+
+  this.getAttraction = function(attractionID) {
+    return Attraction.getAttraction({attractionID: attractionID}).$promise;
   };
 
 });

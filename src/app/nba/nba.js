@@ -12,11 +12,11 @@ angular.module( 'haiwaipiaowu.nba', [
         templateUrl: 'nba/nba.tpl.html'
       }
     },
-    data:{ pageTitle: 'Home' }
+    data:{ pageTitle: 'NBA' }
   });
 })
 
-.controller( 'NBATeamCtrl', function($scope, $state, restfulService) {
+.controller( 'NBATeamCtrl', function($scope, $state, restfulService, $window) {
 
   this.teams = [];
   restfulService.getPerformersByGroup("NBA").then(function(data) {
@@ -24,7 +24,10 @@ angular.module( 'haiwaipiaowu.nba', [
   }.bind(this));
 
   this.onclick = function(team) {
-    $state.go('performer', {performerId: team._id});
+    if (team.URL) {
+      $window.open(team.URL, '_blank');
+    } else {
+      $state.go('performer', {performerId: team._id});
+    }
   };
 });
-

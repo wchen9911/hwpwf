@@ -1,0 +1,18 @@
+<div>
+  <h2>{{attractionCtrl.attraction.name}}</h2>
+  <div>{{attractionCtrl.attraction.ename}}</div>
+  <div style="height: 305px" class="attraction-carousel">
+    <div uib-carousel
+         active="active"
+         no-wrap="noWrapSlides">
+      <div uib-slide
+           ng-repeat="slide in attractionCtrl.attraction.pictures track by $index"
+           index="$index">
+        <img ng-src="{{slide}}" style="margin:auto; height: 305px;">
+      </div>
+    </div>
+  </div>
+  <div class="attraction-description">
+    {{attractionCtrl.attraction.intro}}
+  </div>
+</div>

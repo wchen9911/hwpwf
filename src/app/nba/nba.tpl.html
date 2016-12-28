@@ -4,7 +4,7 @@
             md-theme="default"
             md-theme-watch
             ng-repeat="team in NBATeamCtrl.teams">
-    <img src="assets/{{team.logo}}" alt="{{team.ename}}">
+    <img ng-src="assets/{{team.logo}}" alt="{{team.ename}}">
     <md-card-title>
       <md-card-title-text>
         <span class="md-headline">{{team.name}}</span>

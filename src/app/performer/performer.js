@@ -23,8 +23,10 @@ config(function( $stateProvider ) {
 })
 
 .controller('performerCtrl', function($scope, $state, $stateParams, restfulService){
+
+  $state.current.data.pageTitle = 'Customize';
+
   this.performanceList = [];
-  
   restfulService.getPerformerPerformances($stateParams.performerId).then(function(value) {
     this.performanceList = value;
     console.log(value);

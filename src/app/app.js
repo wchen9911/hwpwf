@@ -4,6 +4,7 @@ angular.module( 'ngBoilerplate', [
   'templates-common',
   'ngBoilerplate.home',
   'haiwaipiaowu.alcatraz',
+  'haiwaipiaowu.attraction',
   'haiwaipiaowu.cart',
   'haiwaipiaowu.cartlist',
   'haiwaipiaowu.checkout',
@@ -22,7 +23,7 @@ angular.module( 'ngBoilerplate', [
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/alcatraz' );
+  $urlRouterProvider.otherwise( '/gocard' );
 })
 
 .run( function run () {
