@@ -39,7 +39,8 @@ angular.module( 'haiwaipiaowu.gocard', [
   ;
 })
 
-.controller('GoCardController', function($scope, $state, restfulService) {
+.controller('GoCardController', function(
+    $scope, $state, restfulService, $window) {
 
   this.cities = [];
   restfulService.getCitiesByProduction('gocard').then(function(data) {
@@ -47,9 +48,12 @@ angular.module( 'haiwaipiaowu.gocard', [
   }.bind(this));
 
   this.clickOnCity = function(city) {
-    $state.go('gocard.city', {city: city._id});
+    if (city.URL) {
+      $window.open(city.URL, '_blank');
+    } else {
+      $state.go('gocard.city', {city: city._id});
+    }
   };
-
 })
 
 .controller('GoCardCityController', function($scope, $state, restfulService, $stateParams) {
@@ -94,7 +98,11 @@ angular.module( 'haiwaipiaowu.gocard', [
   };
 
   this.clickOnAttraction = function(attraction) {
-    $state.go('attraction', {attraction: attraction._id});
+    if (attraction.URL) {
+      $window.open(attraction.URL, '_blank');
+    } else {
+      $state.go('attraction', {attraction: attraction._id});
+    }
   };
 
 });
