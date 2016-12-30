@@ -16,7 +16,8 @@ angular.module( 'haiwaipiaowu.nba', [
   });
 })
 
-.controller( 'NBATeamCtrl', function($scope, $state, restfulService, $window) {
+.controller( 'NBATeamCtrl', function(
+    $scope, $state, restfulService, $window, jumpdlg) {
 
   this.teams = [];
   restfulService.getPerformersByGroup("NBA").then(function(data) {
@@ -25,7 +26,7 @@ angular.module( 'haiwaipiaowu.nba', [
 
   this.onclick = function(team) {
     if (team.URL) {
-      $window.open(team.URL, '_blank');
+      jumpdlg.open(team);
     } else {
       $state.go('performer', {performerId: team._id});
     }

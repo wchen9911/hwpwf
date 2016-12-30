@@ -9,6 +9,7 @@ angular.module( 'ngBoilerplate', [
   'haiwaipiaowu.cartlist',
   'haiwaipiaowu.checkout',
   'haiwaipiaowu.foot',
+  'haiwaipiaowu.jumpdlg',
   'haiwaipiaowu.map',
   'haiwaipiaowu.nba',
   'haiwaipiaowu.other',

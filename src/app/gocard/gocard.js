@@ -56,7 +56,8 @@ angular.module( 'haiwaipiaowu.gocard', [
   };
 })
 
-.controller('GoCardCityController', function($scope, $state, restfulService, $stateParams) {
+.controller('GoCardCityController', function(
+    $scope, $state, restfulService, $stateParams, jumpdlg) {
 
   var city = $stateParams.city;
   this.gocards = [];
@@ -67,7 +68,11 @@ angular.module( 'haiwaipiaowu.gocard', [
   }.bind(this));
 
   this.clickOnGoCard = function(gocard) {
-    $state.go('gocard.city.card', {card: gocard._id});
+    if (gocard.URL) {
+      jumpdlg.open(gocard);
+    } else {
+      $state.go('gocard.city.card', {card: gocard._id});
+    }
   };
 
 })

@@ -1,0 +1,13 @@
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">温馨提示</h3>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <p>{{$ctrl.seconds}} 秒后跳转至出票网站。若您不想阅读“鸟文”可以扫描如下二维码，客服帮您下单。</p>
+    <p>若浏览器未自动跳转，请点击<a href="{{$ctrl.option.URL}}" target="_blank">此处</a>跳转。</p>
+    <p><img class="bar_code" src="http://oivgvnues.bkt.clouddn.com/hwpw_code.png"></p>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-warning" type="button" ng-click="$ctrl.ok()">关闭</button>
+  </div>
+</div>
