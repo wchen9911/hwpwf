@@ -25,18 +25,26 @@
 </head>
 
 <body>
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <img src="http://oivgvnues.bkt.clouddn.com/hwpw-logo.png" class="nav_logo">
-      <ul class="header-nav-bar">
-        <li><a ui-sref-active="active" ui-sref="nba">NBA</a></li>
-        <li><a ui-sref="gocard">城市一卡通</a></li>
-        <li><a ui-sref="other">其他</a></li>
-        <!--li><a ui-sref="checkout">购物车</a></li-->
-      </ul>
-    <span flex></span>
-    </div>
-  </md-toolbar>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img class="navbar-brand nav_logo" src="http://oivgvnues.bkt.clouddn.com/hwpw-logo.png">
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref-active="active" ui-sref="nba">NBA</a></li>
+          <li><a ui-sref="gocard">城市一卡通</a></li>
+          <li><a ui-sref="other">其他</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
   <div class="container" ui-view="main"></div>
   <foot></foot>
 </body>
