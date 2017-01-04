@@ -12,7 +12,7 @@ angular.module( 'haiwaipiaowu.gocard', [
         templateUrl: 'gocard/gocard.tpl.html'
       }
     },
-    data:{ pageTitle: '城市一卡通' }
+    data:{ pageTitle: '城市通票' }
   })
   .state('gocard.city', {
     url: '/:city',
