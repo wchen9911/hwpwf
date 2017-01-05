@@ -21,9 +21,10 @@ service('jumpdlg', function($uibModal){
 .controller('jumpdlgModalInstanceCtrl', function(
     $uibModalInstance, option, $interval, $window) {
 
-  this.seconds = 10;
   this.option = option;
-
+  $window.open(option.URL, '_blank');
+  /*
+  this.seconds = 10;
   var handler = $interval(function() {
     this.seconds -= 1;
     if( this.seconds === 0 ) {
@@ -31,9 +32,9 @@ service('jumpdlg', function($uibModal){
       $window.open(option.URL, '_blank');
     }
   }.bind(this), 1000);
-
+  */
   this.ok = function () {
-    $interval.cancel(handler);
+    //$interval.cancel(handler);
     $uibModalInstance.close();
   };
 
